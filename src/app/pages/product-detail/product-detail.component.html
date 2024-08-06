@@ -1,0 +1,20 @@
+<div id="product-detail-container">
+  <h1>{{ this.detailProduct.name }}</h1>
+  <img [src]="detailProduct.img" />
+  <p>Price: {{ detailProduct.price }}</p>
+
+  <button
+    (click)="
+      addToCart({
+        id: detailProduct.id,
+        name: detailProduct.name,
+        price: detailProduct.price,
+        quantity: 1,
+      })
+    "
+    mat-flat-button
+    color="primary"
+  >
+    Add to Cart
+  </button>
+</div>

@@ -1,0 +1,13 @@
+<div id="container">
+  <div id="left-buttons">
+    <button [routerLink]="['/home']">Trang Chủ</button>
+    <button [routerLink]="['/products']">Sản Phẩm</button>
+  </div>
+  <div id="right-button">
+    <button (click)="authService.login()">Đăng nhập</button>
+    <button (click)="authService.logout()">Đăng Xuất</button>
+    @if (this.authService.currentUser) {
+      <img [src]="this.authService.currentUser.photoURL" />
+    }
+  </div>
+</div>
